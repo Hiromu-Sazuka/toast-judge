@@ -3,11 +3,11 @@
 **CLIP と色分析を組み合わせた食パンの焼き加減自動判定システム**
 
 ポップアップトースターを持っていなくても、パンの焼き色を AI が自動で判定してくれるスクリプトです。  
-Google Colaboratory 上で動作します。
+Webブラウザから利用できます。
 
 ## 🚀 Try Online
 
-https://huggingface.co/spaces/hiromusazuka/toast-doneness-classifier
+[https://huggingface.co/spaces/hiromusazuka/toast-doneness-classifier](https://hiromusazuka-toast-doneness-classifier.hf.space)
 
 ---
 
@@ -24,6 +24,32 @@ https://huggingface.co/spaces/hiromusazuka/toast-doneness-classifier
 | 1.00 | `burnt` | 焦げている |
 
 ---
+
+
+## 🧪 判定結果のサンプル
+
+<table>
+<tr>
+<td align="center">
+<img src="toast1.jpg" width="200"><br>
+light<br>
+score=0.313
+</td>
+
+<td align="center">
+<img src="toast4.jpg" width="200"><br>
+perfect<br>
+score=0.515
+</td>
+
+<td align="center">
+<img src="toast10.jpg" width="200"><br>
+heavy<br>
+score=0.586
+</td>
+</tr>
+</table>
+
 
 ## 🔧 使用技術
 
@@ -104,30 +130,6 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
   <img src="flowchart.png" width="65%">
 </p>
 ---
-
-## 🧪 判定結果のサンプル
-
-<table>
-<tr>
-<td align="center">
-<img src="toast1.jpg" width="200"><br>
-light<br>
-score=0.313
-</td>
-
-<td align="center">
-<img src="toast4.jpg" width="200"><br>
-perfect<br>
-score=0.515
-</td>
-
-<td align="center">
-<img src="toast10.jpg" width="200"><br>
-heavy<br>
-score=0.586
-</td>
-</tr>
-</table>
 
 
 ## ⚠️ 既知の課題と今後の展望
