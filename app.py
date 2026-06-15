@@ -25,16 +25,13 @@ demo = gr.Interface(
         gr.Textbox(label="Predicted Label"),
         gr.Number(label="Toast Score")
     ],
-
     examples=[
-        "toast1.jpg",
-        "toast4.jpg",
-        "toast10.jpg",
-        "toast12.jpg",
+        ["toast1.jpg"],
+        ["toast4.jpg"],
+        ["toast10.jpg"],
+        ["toast12.jpg"],
     ],
-
-    title="🍞 Toast Doneness Classifier",
-    description="Upload a toast image and estimate its doneness."
+    cache_examples=False,
 )
 
 demo.launch()
