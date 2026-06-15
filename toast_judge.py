@@ -166,10 +166,22 @@ def predict_doneness(image_path):
     dark_ratio = get_dark_pixel_ratio(image_path)
     mean_S, mean_V = get_brown_intensity(image_path)
 
+    brown_ratio, coverage = get_brown_distribution(image_path)
+    dark_ratio = get_dark_pixel_ratio(image_path)
+    mean_S, mean_V = get_brown_intensity(image_path)
+    
+    print(
+        f"brown_ratio={brown_ratio:.3f}, "
+        f"coverage={coverage:.3f}, "
+        f"dark_ratio={dark_ratio:.3f}, "
+        f"mean_S={mean_S:.1f}, "
+        f"clip_score={clip_score:.3f}"
+    )
+
     # --- 補正ルールの適用 ---
 
     # 黒ピクセルが多い → burnt
-    if dark_ratio > 0.05:
+    if dark_ratio > 0.20:
         probs = np.array([0.0, 0.0, 0.0, 0.2, 0.8])
         return 0.95, probs
 
@@ -184,6 +196,8 @@ def predict_doneness(image_path):
         return (probs * scores).sum(), probs
 
     return clip_score, probs
+
+
 
 # ============================================================
 # 9. 単一フォルダ内の画像を一括処理して表示
