@@ -237,20 +237,4 @@ def batch_predict_to_csv(folder_path, output_csv="toast_results.csv"):
     print(f"Saved to {output_csv}")
     return results
 
-# ============================================================
-# 11. 実行例
-# ============================================================
 
-if __name__ == "__main__":
-    # パスをご自身の環境に合わせて変更してください
-    folder_path = "/content/drive/MyDrive/bread"
-
-    # 画像を表示しながら判定
-    predict_folder(folder_path)
-
-    # CSV に保存
-    batch_predict_to_csv(folder_path, "toast_results.csv")
-
-    # Colab でダウンロードする場合は以下を実行
-    # from google.colab import files
-    # files.download("toast_results.csv")
