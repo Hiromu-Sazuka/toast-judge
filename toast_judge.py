@@ -166,9 +166,7 @@ def predict_doneness(image_path):
     dark_ratio = get_dark_pixel_ratio(image_path)
     mean_S, mean_V = get_brown_intensity(image_path)
 
-    brown_ratio, coverage = get_brown_distribution(image_path)
-    dark_ratio = get_dark_pixel_ratio(image_path)
-    mean_S, mean_V = get_brown_intensity(image_path)
+
     
     print(
         f"brown_ratio={brown_ratio:.3f}, "
@@ -177,24 +175,28 @@ def predict_doneness(image_path):
         f"mean_S={mean_S:.1f}, "
         f"clip_score={clip_score:.3f}"
     )
-
+    
     # --- 補正ルールの適用 ---
-
-    # 黒ピクセルが多い → burnt
-    if dark_ratio > 0.20:
-        probs = np.array([0.0, 0.0, 0.0, 0.2, 0.8])
-        return 0.95, probs
-
-    # 茶色ピクセルがほぼない → very_light
-    if brown_ratio < 0.10:
-        probs = np.array([0.8, 0.2, 0.0, 0.0, 0.0])
-        return (probs * scores).sum(), probs
-
-    # 彩度が低く茶色も薄い → light
-    if mean_S < 145 and brown_ratio < 0.6:
-        probs = np.array([0.05, 0.70, 0.20, 0.05, 0.0])
-        return (probs * scores).sum(), probs
-
+    
+    # # 黒ピクセルが多い → burnt
+    # if dark_ratio > 0.20:
+    #     print("RULE: burnt by dark_ratio")
+    #     probs = np.array([0.0, 0.0, 0.0, 0.2, 0.8])
+    #     return 0.95, probs
+    
+    # # 茶色ピクセルがほぼない → very_light
+    # if brown_ratio < 0.10:
+    #     print("RULE: very_light by brown_ratio")
+    #     probs = np.array([0.8, 0.2, 0.0, 0.0, 0.0])
+    #     return (probs * scores).sum(), probs
+    
+    # # 彩度が低く茶色も薄い → light
+    # if mean_S < 145 and brown_ratio < 0.6:
+    #     print("RULE: light by saturation")
+    #     probs = np.array([0.05, 0.70, 0.20, 0.05, 0.0])
+    #     return (probs * scores).sum(), probs
+    
+    print("RULE: clip_only")
     return clip_score, probs
 
 
@@ -250,5 +252,3 @@ def batch_predict_to_csv(folder_path, output_csv="toast_results.csv"):
 
     print(f"Saved to {output_csv}")
     return results
-
-
