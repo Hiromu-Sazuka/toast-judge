@@ -1,0 +1,10 @@
+ftfy
+regex
+tqdm
+torch
+opencv-python
+Pillow
+numpy
+matplotlib
+# CLIPは以下のコマンドで別途インストール:
+# pip install git+https://github.com/openai/CLIP.git
