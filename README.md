@@ -100,11 +100,28 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
 
 ## 🧪 判定結果のサンプル
 
-| Image | Score | Label |
-|--------|--------|--------|
-| ![](toast1.jpg) | 0.313 | light |
-| ![](toast4.jpg) | 0.515 | perfect |
-| ![](toast10.jpg) | 0.586 | heavy |
+<table>
+<tr>
+<td align="center">
+<img src="toast1.jpg" width="200"><br>
+light<br>
+score=0.313
+</td>
+
+<td align="center">
+<img src="toast4.jpg" width="200"><br>
+perfect<br>
+score=0.515
+</td>
+
+<td align="center">
+<img src="toast10.jpg" width="200"><br>
+heavy<br>
+score=0.586
+</td>
+</tr>
+</table>
+
 
 ## ⚠️ 既知の課題と今後の展望
 
