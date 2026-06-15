@@ -5,6 +5,10 @@
 ポップアップトースターを持っていなくても、パンの焼き色を AI が自動で判定してくれるスクリプトです。  
 Google Colaboratory 上で動作します。
 
+## 🚀 Try Online
+
+https://huggingface.co/spaces/hiromusazuka/toast-doneness-classifier
+
 ---
 
 ## 🎯 できること
