@@ -95,7 +95,10 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
 ```
 
 詳細なフローチャートは下の図を参照してください。
-![Flowchart](flowchart.png)
+
+<p align="center">
+  <img src="flowchart.png" width="65%">
+</p>
 ---
 
 ## 🧪 判定結果のサンプル
