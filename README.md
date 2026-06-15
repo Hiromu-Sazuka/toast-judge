@@ -95,7 +95,7 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
 ```
 
 詳細なフローチャートは下の図を参照してください。
-![Toast Judge Flowchart](images/flowchart.png)
+![Flowchart](flowchart.png)
 ---
 
 ## 🧪 判定結果のサンプル
