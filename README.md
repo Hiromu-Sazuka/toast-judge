@@ -100,18 +100,11 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
 
 ## 🧪 判定結果のサンプル
 
-| filename | score | pred_label |
-|----------|-------|------------|
-| toast1.jpg | 0.313 | light |
-| toast4.jpg | 0.515 | perfect |
-| toast10.jpg | 0.586 | heavy |
-
-## 🖼️ 焼き加減の例
-
-| very_light | perfect | burnt |
-|------------|---------|--------|
-| ![](images/sample_light.jpg) | ![](images/sample_perfect.jpg) | ![](images/sample_burnt.jpg) |
----
+| Image | Score | Label |
+|--------|--------|--------|
+| ![](toast1.jpg) | 0.313 | light |
+| ![](toast4.jpg) | 0.515 | perfect |
+| ![](toast10.jpg) | 0.586 | heavy |
 
 ## ⚠️ 既知の課題と今後の展望
 
