@@ -33,19 +33,19 @@ Webブラウザから利用できます。
 <td align="center">
 <img src="toast1.jpg" width="200"><br>
 light<br>
-score=0.313
+score=0.497
 </td>
 
 <td align="center">
 <img src="toast4.jpg" width="200"><br>
 perfect<br>
-score=0.515
+score=0.511
 </td>
 
 <td align="center">
 <img src="toast10.jpg" width="200"><br>
 heavy<br>
-score=0.586
+score=0.595
 </td>
 </tr>
 </table>
@@ -54,8 +54,12 @@ score=0.586
 ## 🔧 使用技術
 
 - **[CLIP](https://github.com/openai/CLIP)** （OpenAI）― 画像とテキストの照合モデル
+- **Pytorch**
 - **OpenCV** ― HSV 色空間による茶色ピクセル分析
 - **Google Colaboratory** ― 実行環境（GPU 対応）
+- **Gradio**
+- **Hugging Face Spaces** ― 実行環境（GPU 対応）
+  
 
 ---
 
@@ -134,16 +138,15 @@ batch_predict_to_csv(folder_path, "toast_results.csv")
 
 ## ⚠️ 既知の課題と今後の展望
 
-- CLIP はテキストプロンプトの表現に強く依存するため、赤みがかった焦げ茶（toast10 のような画像）の判定が難しい
-- CNN ベースの学習済みモデルによる精度向上を検討中
-- リアルタイム動画判定への対応も視野に入れている
+-撮影環境や照明条件によって判定結果が変化する場合があります
+-トースト以外のパンでは精度が低下する可能性があります
+-CLIPのテキストプロンプト設計に結果が影響されます
 
 ---
 
 ## 📝 背景
 
-授業の課題として、ChatGPT とのバイブコーディングで作成。  
-「パンを焼くたびに取り出して確認する手間をなくしたい」という個人的な動機がきっかけです。
+画像認識モデルCLIPを利用し、日常的な題材である「トーストの焼き加減判定」をテーマに実装しました。
 
 ---
 
