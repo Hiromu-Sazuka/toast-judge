@@ -31,9 +31,9 @@ Webブラウザから利用できます。
 <table>
 <tr>
 <td align="center">
-<img src="toast1.jpg" width="200"><br>
-light<br>
-score=0.497
+<img src="toast12.jpg" width="200"><br>
+very_light<br>
+score=0.462
 </td>
 
 <td align="center">
